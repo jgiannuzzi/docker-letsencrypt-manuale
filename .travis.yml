@@ -1,0 +1,15 @@
+language: bash
+
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t manuale .
+  - docker run --rm manuale version
+
+after_script:
+  - docker images
+
+# vim:set et ts=2 sw=2:

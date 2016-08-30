@@ -8,6 +8,8 @@ services:
 script:
   - docker build -t manuale .
   - docker run --rm manuale version
+  - docker run --rm manuale -h
+  - docker run --rm manuale true
 
 after_script:
   - docker images

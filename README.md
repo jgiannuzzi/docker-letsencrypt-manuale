@@ -20,7 +20,7 @@ Once that's done, you'll have your account saved in `account.json` in the curren
 
 Next up, verify the domains you want a certificate for with `docker run --rm -ti -v $PWD:/data jgiannuzzi/letsencrypt-manuale authorize [domain]`. This will show you the DNS records you need to create and wait for you to do it. For example, you might do it for `example.com` and `www.example.com`. You will need to authorize each hostname you want a certificate for.
 
-Once that's done, you can finally get down to business. Run `docker run --rm -ti -v $PWD:/data jgiannuzzi/letsencrypt-manuale issue example.com www.example.com` to get your certificates for `example.com` and `www.example.com`. It'll save the key, certificate and certificate with intermediate to the working directory for each hostname that was authorized.
+Once that's done, you can finally get down to business. Run `docker run --rm -ti -v $PWD:/data jgiannuzzi/letsencrypt-manuale issue example.com www.example.com` to get your certificate for `example.com` with `www.example.com` as a Subject Alternative Name. It'll save the key, certificate and certificate with intermediate to the working directory. Additional hostnames will become Subject Alternative Names in the certificate (if you authorized them as well).
 
 There's plenty of documentation inside each command. Run `docker run --rm -ti -v $PWD:/data jgiannuzzi/letsencrypt-manuale -h` for a list of commands and `docker run --rm -ti -v $PWD:/data jgiannuzzi/letsencrypt-manuale [command] -h` for details.
 

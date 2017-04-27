@@ -1,6 +1,6 @@
 FROM python:3-alpine
 
-ENV MANUALE_VERSION 1.0.3
+ENV MANUALE_VERSION 1.1.0
 
 RUN set -ex \
  && apk add --no-cache --virtual .build-deps \
